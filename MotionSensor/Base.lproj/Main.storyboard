@@ -282,7 +282,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="L-Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8t-Dh-F16">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R-Value" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8t-Dh-F16">
                                 <rect key="frame" x="245" y="525" width="60" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="0rP-MI-Rtl"/>
@@ -364,6 +364,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="pitchLabel" destination="1rO-69-g2R" id="NTo-Us-riV"/>
+                        <outlet property="rollLabel" destination="a8t-Dh-F16" id="xpr-HO-CV6"/>
+                        <outlet property="xAccelLabel" destination="mgJ-k2-8Pl" id="hlg-aF-f8N"/>
+                        <outlet property="xGravityLabel" destination="TZU-WW-Cxd" id="POo-hQ-d2B"/>
+                        <outlet property="xGyroLabel" destination="nUy-WC-JVc" id="TTg-q9-MC7"/>
+                        <outlet property="yAccelLabel" destination="6OI-a8-o13" id="fG8-ya-Zrf"/>
+                        <outlet property="yGravityLabel" destination="elC-hV-rsN" id="taW-Fq-jeh"/>
+                        <outlet property="yGyroLabel" destination="NYI-TA-rUb" id="tdS-qO-TuL"/>
+                        <outlet property="yawLabel" destination="vt8-77-ZWM" id="ind-nj-kSW"/>
+                        <outlet property="zAccelLabel" destination="l4V-oj-sK4" id="s8D-x6-Gk8"/>
+                        <outlet property="zGravityLabel" destination="rBM-Hh-hU7" id="eJ4-Mi-ZhH"/>
+                        <outlet property="zGyroLabel" destination="ewb-B0-Fod" id="Oft-KL-Tl7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

@@ -52,58 +52,46 @@ class ViewController: UIViewController {
             
             // ジャイロスコープ（回転速度）
             // X軸回り回転角速度
-            var gyroX = motion.rotationRate.x
-            gyroX = round(gyroX*100)/100
+            let gyroX = motion.rotationRate.x
             xGyroLabel.text = String(gyroX)
             // Y軸回り回転角速度
-            var gyroY = motion.rotationRate.y
-            gyroY = round(gyroY*100)/100
+            let gyroY = motion.rotationRate.y
             yGyroLabel.text = String(gyroY)
             // Z軸回り回転角速度
-            var gyroZ = motion.rotationRate.z
-            gyroZ = round(gyroZ*100)/100
+            let gyroZ = motion.rotationRate.z
             zGyroLabel.text = String(gyroZ)
             
             // 加速度センサー（移動加速度）
             // X軸方向加速度
-            var accelX = motion.userAcceleration.x
-            accelX = round(accelX*1000)/1000
+            let accelX = motion.userAcceleration.x
             xAccelLabel.text = String(accelX)
             // Y軸方向加速度
-            var accelY = motion.userAcceleration.y
-            accelY = round(accelY*1000)/1000
+            let accelY = motion.userAcceleration.y
             yAccelLabel.text = String(accelY)
             // Z軸方向加速度
-            var accelZ = motion.userAcceleration.z
-            accelZ = round(accelZ*1000)/1000
+            let accelZ = motion.userAcceleration.z
             zAccelLabel.text = String(accelZ)
             
             // 重力ベクトル
             // 加速度のX成分
-            var gravityX = motion.gravity.x
-            gravityX = round(gravityX*100)/100
+            let gravityX = motion.gravity.x
             xGravityLabel.text = String(gravityX)
             // 加速度のY成分
-            var gravityY = motion.gravity.y
-            gravityY = round(gravityY*100)/100
+            let gravityY = motion.gravity.y
             yGravityLabel.text = String(gravityY)
             // 加速度のZ成分
-            var gravityZ = motion.gravity.z
-            gravityZ = round(gravityZ*100)/100
+            let gravityZ = motion.gravity.z
             zGravityLabel.text = String(gravityZ)
             
             // 姿勢センサー（回転角度　ラジアン）
             // ピッチ（X軸回り回転角度）
-            var pitch = motion.attitude.pitch
-            pitch = round(pitch*100)/100
+            let pitch = motion.attitude.pitch
             pitchLabel.text = String(pitch)
             // ロール（Y軸回り回転角度）
-            var roll = motion.attitude.roll
-            roll = round(roll*100)/100
+            let roll = motion.attitude.roll
             rollLabel.text = String(roll)
             // ヨー（Z軸回り回転角度）
-            var yaw = motion.attitude.yaw
-            yaw = round(yaw*100)/100
+            let yaw = motion.attitude.yaw
             yawLabel.text = String(yaw)
         }
     }

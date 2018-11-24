@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		782C4EB621A912C900548534 /* ProcessingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782C4EB521A912C900548534 /* ProcessingKit.framework */; };
+		782C4EB921A9199800548534 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C4EB821A9199800548534 /* GraphViewController.swift */; };
 		78D4C44B21A6DB7500D650A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D4C44A21A6DB7500D650A7 /* AppDelegate.swift */; };
 		78D4C44D21A6DB7500D650A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D4C44C21A6DB7500D650A7 /* ViewController.swift */; };
 		78D4C45021A6DB7500D650A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C44E21A6DB7500D650A7 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		782C4EB521A912C900548534 /* ProcessingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProcessingKit.framework; path = Carthage/Build/iOS/ProcessingKit.framework; sourceTree = "<group>"; };
+		782C4EB821A9199800548534 /* GraphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
 		78D4C44721A6DB7500D650A7 /* MotionSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D4C44A21A6DB7500D650A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78D4C44C21A6DB7500D650A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			children = (
 				78D4C44A21A6DB7500D650A7 /* AppDelegate.swift */,
 				78D4C44C21A6DB7500D650A7 /* ViewController.swift */,
+				782C4EB821A9199800548534 /* GraphViewController.swift */,
 				78D4C44E21A6DB7500D650A7 /* Main.storyboard */,
 				78D4C45121A6DB7700D650A7 /* Assets.xcassets */,
 				78D4C45321A6DB7700D650A7 /* LaunchScreen.storyboard */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				782C4EB921A9199800548534 /* GraphViewController.swift in Sources */,
 				78D4C44D21A6DB7500D650A7 /* ViewController.swift in Sources */,
 				78D4C44B21A6DB7500D650A7 /* AppDelegate.swift in Sources */,
 			);

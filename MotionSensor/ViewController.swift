@@ -96,6 +96,20 @@ class ViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func buttonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toGraphViewController", sender: nil)
+    }
+    
+    // Segue準備
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "toGraphViewController") {
+            let gvc: GraphViewController = (segue.destination as? GraphViewController)!
+            // GraphViewControllerにメッセージを設定
+            gvc.textGVC = "to GVC"
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

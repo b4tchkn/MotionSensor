@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SensorViewController.swift
 //  MotionSensor
 //
 //  Created by Kakeru Nakabachi on 2018/11/22.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreMotion
 
-class ViewController: UIViewController {
+class SensorViewController: UIViewController {
 
     // ジャイロスコープの測定値
     @IBOutlet weak var xGyroLabel: UILabel!
@@ -117,5 +117,10 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toHomeViewController", sender: nil)
+    }
+    
 }
 

@@ -11,7 +11,7 @@
 		782C4EB921A9199800548534 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C4EB821A9199800548534 /* GraphViewController.swift */; };
 		787938EE21F6CCFC0098234F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787938ED21F6CCFC0098234F /* HomeViewController.swift */; };
 		78D4C44B21A6DB7500D650A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D4C44A21A6DB7500D650A7 /* AppDelegate.swift */; };
-		78D4C44D21A6DB7500D650A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D4C44C21A6DB7500D650A7 /* ViewController.swift */; };
+		78D4C44D21A6DB7500D650A7 /* SensorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D4C44C21A6DB7500D650A7 /* SensorViewController.swift */; };
 		78D4C45021A6DB7500D650A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C44E21A6DB7500D650A7 /* Main.storyboard */; };
 		78D4C45221A6DB7700D650A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C45121A6DB7700D650A7 /* Assets.xcassets */; };
 		78D4C45521A6DB7700D650A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78D4C45321A6DB7700D650A7 /* LaunchScreen.storyboard */; };
@@ -23,7 +23,7 @@
 		787938ED21F6CCFC0098234F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		78D4C44721A6DB7500D650A7 /* MotionSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78D4C44A21A6DB7500D650A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		78D4C44C21A6DB7500D650A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		78D4C44C21A6DB7500D650A7 /* SensorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorViewController.swift; sourceTree = "<group>"; };
 		78D4C44F21A6DB7500D650A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78D4C45121A6DB7700D650A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78D4C45421A6DB7700D650A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 			isa = PBXGroup;
 			children = (
 				78D4C44A21A6DB7500D650A7 /* AppDelegate.swift */,
-				78D4C44C21A6DB7500D650A7 /* ViewController.swift */,
+				78D4C44C21A6DB7500D650A7 /* SensorViewController.swift */,
 				787938ED21F6CCFC0098234F /* HomeViewController.swift */,
 				782C4EB821A9199800548534 /* GraphViewController.swift */,
 				78D4C44E21A6DB7500D650A7 /* Main.storyboard */,
@@ -176,7 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				782C4EB921A9199800548534 /* GraphViewController.swift in Sources */,
-				78D4C44D21A6DB7500D650A7 /* ViewController.swift in Sources */,
+				78D4C44D21A6DB7500D650A7 /* SensorViewController.swift in Sources */,
 				78D4C44B21A6DB7500D650A7 /* AppDelegate.swift in Sources */,
 				787938EE21F6CCFC0098234F /* HomeViewController.swift in Sources */,
 			);

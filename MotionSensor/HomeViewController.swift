@@ -15,6 +15,6 @@ class HomeViewController: UIViewController {
 
     }
     @IBAction func startButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toViewController", sender: nil)
+        performSegue(withIdentifier: "toSensorViewController", sender: nil)
     }
 }

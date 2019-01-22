@@ -33,12 +33,14 @@ class ViewController: UIViewController {
     
     // モーションマネージャ生成
     let motionManager = CMMotionManager()
+    // センサの値を読み取るためのキューを実行する間隔（秒数）
+    let dt = 0.1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // センサの値を読み取るためのキューを実行する間隔（秒数）
-        motionManager.deviceMotionUpdateInterval = 0.1
+        // センサの値を読み取るためのキューを実行する間隔（秒数）の設定
+        motionManager.deviceMotionUpdateInterval = dt
         // キュー実行するクロージャ
         let handler:CMDeviceMotionHandler = {(motionData:CMDeviceMotion?, error:Error?) -> Void in
             self.motionAnimation(motionData, error: error as NSError?)

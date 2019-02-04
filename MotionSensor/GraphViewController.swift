@@ -13,10 +13,26 @@ class GraphViewController: UIViewController {
     @IBOutlet weak var gvcLabel: UILabel!
     
     var textGVC: String?
+    var xGyroData:[Double]?
+    var yGyroData:[Double]?
+    var zGyroData:[Double]?
+    
+    var xAccelData:[Double]?
+    var yAccelData:[Double]?
+    var zAccelData:[Double]?
+    
+    var xGravityData:[Double]?
+    var yGravityData:[Double]?
+    var zGravityData:[Double]?
+    
+    var pitchData:[Double]?
+    var rollData:[Double]?
+    var yawData:[Double]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        gvcLabel.text = textGVC
+        //textGVC = xAccelData?.count
+        gvcLabel.text = xAccelData?.count.description
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

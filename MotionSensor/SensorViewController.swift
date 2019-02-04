@@ -36,6 +36,10 @@ class SensorViewController: UIViewController {
     @IBOutlet weak var yAccelLabel: UILabel!
     @IBOutlet weak var zAccelLabel: UILabel!
     
+    // count
+    @IBOutlet weak var dataCountLabel: UILabel!
+    
+    
     // モーションマネージャ生成
     let motionManager = CMMotionManager()
     // センサの値を読み取るためのキューを実行する間隔（秒数）
@@ -103,6 +107,9 @@ class SensorViewController: UIViewController {
             // ヨー（Z軸回り回転角度）
             let yaw = motion.attitude.yaw
             yawData.append(yaw)
+            
+            dataCountLabel.text = String(xAccelData.count)
+            print(xAccelData.count)
         }
     }
     @IBAction func resetButtonTapped(_ sender: Any) {
@@ -140,6 +147,22 @@ class SensorViewController: UIViewController {
             let gvc: GraphViewController = (segue.destination as? GraphViewController)!
             // GraphViewControllerにメッセージを設定
             gvc.textGVC = "to GVC"
+            
+            gvc.xGyroData = xGyroData
+            gvc.yGyroData = yGyroData
+            gvc.zGyroData = zGyroData
+            
+            gvc.xAccelData = xAccelData
+            gvc.yAccelData = yAccelData
+            gvc.zAccelData = zAccelData
+            
+            gvc.xGravityData = xGravityData
+            gvc.yGravityData = yGravityData
+            gvc.zGravityData = zGravityData
+            
+            gvc.pitchData = pitchData
+            gvc.rollData = rollData
+            gvc.yawData = yawData
         }
     }
     

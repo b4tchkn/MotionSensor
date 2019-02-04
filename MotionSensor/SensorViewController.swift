@@ -12,24 +12,13 @@ import CoreMotion
 class SensorViewController: UIViewController {
 
     // ジャイロスコープの測定値保存
-    var xGyroData:[Double] = []
-    var yGyroData:[Double] = []
-    var zGyroData:[Double] = []
-    
+    var gyroData = [[String]]()
     // 加速度の測定値保存
-    var xAccelData:[Double] = []
-    var yAccelData:[Double] = []
-    var zAccelData:[Double] = []
-    
+    var accelData = [[String]]()
     // 加速度のベクトル保存
-    var xGravityData:[Double] = []
-    var yGravityData:[Double] = []
-    var zGravityData:[Double] = []
-    
+    var gravityData = [[String]]()
     // 姿勢の測定値保存
-    var pitchData:[Double] = []
-    var rollData:[Double] = []
-    var yawData:[Double] = []
+    var positionData = [[String]]()
     
     // 加速度の測定値
     @IBOutlet weak var xAccelLabel: UILabel!
@@ -61,77 +50,64 @@ class SensorViewController: UIViewController {
     func motionAnimation(_ motionData:CMDeviceMotion?, error:NSError?) {
         if let motion = motionData {
             
+            let formatter = DateFormatter()
+            formatter.timeZone = TimeZone.ReferenceType.local
+            formatter.dateFormat = "HH:mm:ss.SSS"
+            let date = Date()
+            let dateStr = formatter.string(from: date)
+            
             // ジャイロスコープ（回転速度）
             // X軸回り回転角速度
             let gyroX = motion.rotationRate.x
-            xGyroData.append(gyroX)
             // Y軸回り回転角速度
             let gyroY = motion.rotationRate.y
-            yGyroData.append(gyroY)
             // Z軸回り回転角速度
             let gyroZ = motion.rotationRate.z
-            zGyroData.append(gyroZ)
+            gyroData.append([String(dateStr), String(gyroX), String(gyroY), String(gyroZ)])
             
             // 加速度センサー（移動加速度）
             // X軸方向加速度
             let accelX = motion.userAcceleration.x
             xAccelLabel.text = String(accelX)
-            xAccelData.append(motion.userAcceleration.x)
             // Y軸方向加速度
             let accelY = motion.userAcceleration.y
             yAccelLabel.text = String(accelY)
-            yAccelData.append(motion.userAcceleration.y)
             // Z軸方向加速度
             let accelZ = motion.userAcceleration.z
             zAccelLabel.text = String(accelZ)
-            zAccelData.append(motion.userAcceleration.z)
+            accelData.append([String(dateStr), String(accelX), String(accelY), String(accelZ)])
             
             // 重力ベクトル
             // 加速度のX成分
             let gravityX = motion.gravity.x
-            xGyroData.append(gravityX)
             // 加速度のY成分
             let gravityY = motion.gravity.y
-            yGyroData.append(gravityY)
             // 加速度のZ成分
             let gravityZ = motion.gravity.z
-            zGyroData.append(gravityZ)
+            gyroData.append([String(dateStr), String(gravityX), String(gravityY), String(gravityZ)])
             
             // 姿勢センサー（回転角度　ラジアン）
             // ピッチ（X軸回り回転角度）
             let pitch = motion.attitude.pitch
-            pitchData.append(pitch)
             // ロール（Y軸回り回転角度）
             let roll = motion.attitude.roll
-            rollData.append(roll)
             // ヨー（Z軸回り回転角度）
             let yaw = motion.attitude.yaw
-            yawData.append(yaw)
+            positionData.append([String(dateStr), String(pitch), String(roll), String(yaw)])
             
-            dataCountLabel.text = String(xAccelData.count)
-            print(xAccelData.count)
+            dataCountLabel.text = String(gyroData.count)
+            print("count:\(gyroData.count)")
+            print("gyroX:\(gyroData)")
         }
     }
     @IBAction func resetButtonTapped(_ sender: Any) {
         print("resetButtonTapped")
-        print(xAccelData.count)
         
         // 配列リセット
-        xGyroData.removeAll()
-        yGyroData.removeAll()
-        zGyroData.removeAll()
-        
-        xAccelData.removeAll()
-        yAccelData.removeAll()
-        zAccelData.removeAll()
-        
-        xGravityData.removeAll()
-        yGravityData.removeAll()
-        zGravityData.removeAll()
-        
-        pitchData.removeAll()
-        rollData.removeAll()
-        yawData.removeAll()
+        gyroData.removeAll()
+        accelData.removeAll()
+        gravityData.removeAll()
+        positionData.removeAll()
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
@@ -146,23 +122,10 @@ class SensorViewController: UIViewController {
         if (segue.identifier == "toGraphViewController") {
             let gvc: GraphViewController = (segue.destination as? GraphViewController)!
             // GraphViewControllerにメッセージを設定
-            gvc.textGVC = "to GVC"
-            
-            gvc.xGyroData = xGyroData
-            gvc.yGyroData = yGyroData
-            gvc.zGyroData = zGyroData
-            
-            gvc.xAccelData = xAccelData
-            gvc.yAccelData = yAccelData
-            gvc.zAccelData = zAccelData
-            
-            gvc.xGravityData = xGravityData
-            gvc.yGravityData = yGravityData
-            gvc.zGravityData = zGravityData
-            
-            gvc.pitchData = pitchData
-            gvc.rollData = rollData
-            gvc.yawData = yawData
+            gvc.gyroData = gyroData
+            gvc.accelData = accelData
+            gvc.gravityData = gravityData
+            gvc.positionData = positionData
         }
     }
     

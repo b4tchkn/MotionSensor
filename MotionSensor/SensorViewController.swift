@@ -84,7 +84,7 @@ class SensorViewController: UIViewController {
             let gravityY = motion.gravity.y
             // 加速度のZ成分
             let gravityZ = motion.gravity.z
-            gyroData.append([String(dateStr), String(gravityX), String(gravityY), String(gravityZ)])
+            gravityData.append([String(dateStr), String(gravityX), String(gravityY), String(gravityZ)])
             
             // 姿勢センサー（回転角度　ラジアン）
             // ピッチ（X軸回り回転角度）
@@ -96,8 +96,6 @@ class SensorViewController: UIViewController {
             positionData.append([String(dateStr), String(pitch), String(roll), String(yaw)])
             
             dataCountLabel.text = String(gyroData.count)
-            print("count:\(gyroData.count)")
-            print("gyroX:\(gyroData)")
         }
     }
     @IBAction func resetButtonTapped(_ sender: Any) {

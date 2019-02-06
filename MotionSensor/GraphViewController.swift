@@ -20,6 +20,10 @@ class GraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         gvcLabel.text = String(gyroData.count)
+        print("gyroData.count:\(gyroData.count)")
+        print("accelData.count:\(accelData.count)")
+        print("gravityData.count:\(gravityData.count)")
+        print("positionData.count:\(positionData.count)")
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {

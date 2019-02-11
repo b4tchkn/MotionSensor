@@ -46,16 +46,29 @@
                                     <segue destination="BYZ-38-t0r" kind="show" identifier="toSensorViewController" id="pwy-3c-khG"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your name." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qGf-fC-ISb">
+                                <rect key="frame" x="70" y="267" width="235" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="EiV-c6-Cqw" firstAttribute="centerX" secondItem="a2c-3i-lE8" secondAttribute="centerX" id="dAH-5d-cuB"/>
                             <constraint firstItem="A0w-pL-xLP" firstAttribute="bottom" secondItem="EiV-c6-Cqw" secondAttribute="bottom" constant="180" id="fve-e1-UmT"/>
+                            <constraint firstItem="A0w-pL-xLP" firstAttribute="trailing" secondItem="qGf-fC-ISb" secondAttribute="trailing" constant="70" id="jfU-E3-nps"/>
+                            <constraint firstItem="qGf-fC-ISb" firstAttribute="leading" secondItem="A0w-pL-xLP" secondAttribute="leading" constant="70" id="l4k-s7-jGf"/>
                             <constraint firstItem="MD6-LK-Xfx" firstAttribute="centerX" secondItem="a2c-3i-lE8" secondAttribute="centerX" id="lRn-oJ-BXW"/>
+                            <constraint firstItem="qGf-fC-ISb" firstAttribute="centerX" secondItem="a2c-3i-lE8" secondAttribute="centerX" id="onx-4b-rpg"/>
+                            <constraint firstItem="EiV-c6-Cqw" firstAttribute="top" secondItem="qGf-fC-ISb" secondAttribute="bottom" constant="70" id="rbL-P6-hUG"/>
                             <constraint firstItem="MD6-LK-Xfx" firstAttribute="top" secondItem="A0w-pL-xLP" secondAttribute="top" constant="100" id="zan-J1-pcc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A0w-pL-xLP"/>
                     </view>
+                    <connections>
+                        <outlet property="inputText" destination="qGf-fC-ISb" id="Q3g-ho-Vgs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P56-9S-3Fa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -280,7 +293,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="D1H-vw-2Ho"/>
-        <segue reference="1bm-BQ-e8K"/>
+        <segue reference="pwy-3c-khG"/>
     </inferredMetricsTieBreakers>
 </document>

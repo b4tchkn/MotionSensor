@@ -21,33 +21,26 @@ class GraphViewController: UIViewController {
     var csvString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        gvcLabel.text = String(gyroData.count)
-        print("gyroData.count:\(gyroData.count)")
-        print("accelData.count:\(accelData.count)")
-        print("gravityData.count:\(gravityData.count)")
-        print("positionData.count:\(positionData.count)")
         
         for i in 0 ..< gyroData.count {
             for data in gyroData[i] {
                 csvString += data
                 if data != gyroData[i].last {
-                    csvString += "\t"
+                    csvString += ","
                 } else {
                     csvString += "\n"
                 }
             }
         }
-        
-        print(csvString)
+
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let filePath = dir.appendingPathComponent("\(fileName)_gyro.tsv")
+            let filePath = dir.appendingPathComponent("\(fileName)_gyro.csv")
             
             do {
                 print("filePath -> \(filePath)")
-                print("testing")
                 try csvString.write(to: filePath, atomically: true, encoding: .utf8)
             } catch {
-                print("error")
+                print("file error")
             }
         }
     }

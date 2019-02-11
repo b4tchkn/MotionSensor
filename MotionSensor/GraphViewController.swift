@@ -17,7 +17,7 @@ class GraphViewController: UIViewController {
     var gravityData = [[String]]()
     var positionData = [[String]]()
     
-    
+    var fileName = ""
     var csvString = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,7 @@ class GraphViewController: UIViewController {
         
         print(csvString)
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let filePath = dir.appendingPathComponent("gyro.tsv")
+            let filePath = dir.appendingPathComponent("\(fileName)_gyro.tsv")
             
             do {
                 print("filePath -> \(filePath)")

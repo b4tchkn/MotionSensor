@@ -11,6 +11,9 @@ import CoreMotion
 
 class SensorViewController: UIViewController {
 
+    // HomeVCから入力されたファイル名
+    var fileName = ""
+    
     // ジャイロスコープの測定値保存
     var gyroData = [[String]]()
     // 加速度の測定値保存
@@ -120,6 +123,7 @@ class SensorViewController: UIViewController {
         if (segue.identifier == "toGraphViewController") {
             let gvc: GraphViewController = (segue.destination as? GraphViewController)!
             // GraphViewControllerにメッセージを設定
+            gvc.fileName = fileName
             gvc.gyroData = gyroData
             gvc.accelData = accelData
             gvc.gravityData = gravityData

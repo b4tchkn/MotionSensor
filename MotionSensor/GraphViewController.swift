@@ -22,6 +22,8 @@ class GraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gvcLabel.text = String(accelData.count)
+        
         for i in 0 ..< accelData.count {
             for data in accelData[i] {
                 csvString += data

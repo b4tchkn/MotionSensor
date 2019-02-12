@@ -22,10 +22,10 @@ class GraphViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for i in 0 ..< gyroData.count {
-            for data in gyroData[i] {
+        for i in 0 ..< accelData.count {
+            for data in accelData[i] {
                 csvString += data
-                if data != gyroData[i].last {
+                if data != accelData[i].last {
                     csvString += ","
                 } else {
                     csvString += "\n"
@@ -34,7 +34,7 @@ class GraphViewController: UIViewController {
         }
 
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let filePath = dir.appendingPathComponent("\(fileName)_gyro.csv")
+            let filePath = dir.appendingPathComponent("\(fileName)_accel.csv")
             
             do {
                 print("filePath -> \(filePath)")

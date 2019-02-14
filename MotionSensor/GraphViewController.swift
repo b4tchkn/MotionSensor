@@ -35,6 +35,7 @@ class GraphViewController: UIViewController {
             }
         }
 
+        print(csvString)
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let filePath = dir.appendingPathComponent("\(fileName)_accel.csv")
             

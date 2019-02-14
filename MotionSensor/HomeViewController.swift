@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
          //起動時ファイル削除用
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
          //削除したいファイル名指定
-         let filePath = dir.appendingPathComponent("kakeru_gyro.csv")
+         let filePath = dir.appendingPathComponent("zyuryokukensa_accel.csv")
             
             do {
                 try FileManager.default.removeItem(at: filePath)
@@ -29,7 +29,6 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
             }
         }
         */
-        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

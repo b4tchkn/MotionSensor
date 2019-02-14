@@ -27,6 +27,10 @@ class SensorViewController: UIViewController {
     @IBOutlet weak var xAccelLabel: UILabel!
     @IBOutlet weak var yAccelLabel: UILabel!
     @IBOutlet weak var zAccelLabel: UILabel!
+
+    var accelX: Double = 0
+    var accelY: Double = 0
+    var accelZ: Double = 0
     
     // count
     @IBOutlet weak var dataCountLabel: UILabel!
@@ -36,6 +40,9 @@ class SensorViewController: UIViewController {
     let motionManager = CMMotionManager()
     // センサの値を読み取るためのキューを実行する間隔（秒数）
     let dt = 0.05
+    
+    // フィルター計算用の値
+    let Alpha = 0.8
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,15 +77,22 @@ class SensorViewController: UIViewController {
             
             // 加速度センサー（移動加速度）
             // X軸方向加速度
-            let accelX = motion.userAcceleration.x
-            xAccelLabel.text = String(accelX)
+            // highpassFilter
+            accelX = Alpha * motion.userAcceleration.x + accelX * (1.0 - Alpha)
+            let highAccelX = motion.userAcceleration.x - accelX
+            xAccelLabel.text = String(highAccelX)
             // Y軸方向加速度
-            let accelY = motion.userAcceleration.y
-            yAccelLabel.text = String(accelY)
+            // highpassFilter
+            accelY = Alpha * motion.userAcceleration.y + accelY * (1.0 - Alpha)
+            let highAccelY = motion.userAcceleration.y - accelY
+            yAccelLabel.text = String(highAccelY)
             // Z軸方向加速度
-            let accelZ = motion.userAcceleration.z
-            zAccelLabel.text = String(accelZ)
-            accelData.append([String(dateStr), String(accelX), String(accelY), String(accelZ)])
+            // highpassFilter
+            accelZ = Alpha * motion.userAcceleration.z + accelZ * (1.0 - Alpha)
+            let highAccelZ = motion.userAcceleration.z - accelZ
+            zAccelLabel.text = String(highAccelZ)
+            
+            accelData.append([String(dateStr), String(highAccelX), String(highAccelY), String(highAccelZ)])
             
             // 重力ベクトル
             // 加速度のX成分

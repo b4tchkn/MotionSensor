@@ -24,23 +24,28 @@ class GraphViewController: UIViewController {
         
         gvcLabel.text = String(accelData.count)
         
-        for i in 0 ..< accelData.count {
-            for data in accelData[i] {
-                csvString += data
-                if data != accelData[i].last {
-                    csvString += ","
-                } else {
-                    csvString += "\n"
-                }
-            }
-        }
-
-        print(csvString)
+        let gyroCSV = csvGenerate(datas: gyroData)
+        let accelCSV = csvGenerate(datas: accelData)
+        let gravityCSV = csvGenerate(datas: gravityData)
+        let positionCSV = csvGenerate(datas: positionData)
+        
+        createFile(gyroCSV, dataType: "gyro")
+        createFile(accelCSV, dataType: "accel")
+        createFile(gravityCSV, dataType: "gravity")
+        createFile(positionCSV, dataType: "position")
+        
+    }
+    
+    @IBAction func backButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "toViewController", sender: nil)
+    }
+    
+    // csvFile生成
+    func createFile(_ csvString: String, dataType: String) {
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let filePath = dir.appendingPathComponent("\(fileName)_accel.csv")
+            let filePath = dir.appendingPathComponent("\(fileName)_\(dataType).csv")
             
             do {
-                print("filePath -> \(filePath)")
                 try csvString.write(to: filePath, atomically: true, encoding: .utf8)
             } catch {
                 print("file error")
@@ -48,8 +53,21 @@ class GraphViewController: UIViewController {
         }
     }
     
-    @IBAction func backButtonTapped(_ sender: Any) {
-        performSegue(withIdentifier: "toViewController", sender: nil)
+    // csvString生成
+    func csvGenerate(datas: [[String]]) -> String {
+        var csv = ""
+        
+        for i in 0 ..< datas.count {
+            for data in datas[i] {
+                csv += data
+                if data != datas[i].last {
+                    csv += ","
+                } else {
+                    csv += "\n"
+                }
+            }
+        }
+        return csv
     }
     
     override func didReceiveMemoryWarning() {

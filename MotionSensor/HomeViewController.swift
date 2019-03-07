@@ -16,11 +16,12 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         inputText.delegate = self
+
         /*
          //起動時ファイル削除用
         if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
          //削除したいファイル名指定
-         let filePath = dir.appendingPathComponent("zyuryokukensa_accel.csv")
+         let filePath = dir.appendingPathComponent("mazide_high_accel.csv")
             
             do {
                 try FileManager.default.removeItem(at: filePath)
@@ -28,7 +29,7 @@ class HomeViewController: UIViewController, UITextFieldDelegate {
                 print("error")
             }
         }
-        */
+ */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

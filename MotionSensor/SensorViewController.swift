@@ -35,9 +35,9 @@ class SensorViewController: UIViewController {
     // モーションマネージャ生成
     let motionManager = CMMotionManager()
     // センサの値を読み取るためのキューを実行する間隔（秒数）
-    // サンプリングレート20Hz=1秒間に20回取得なので，
-    // 0.05秒に一回取得
-    let dt = 0.05
+    // サンプリングレート50Hz=1秒間に50回取得なので，
+    // 0.02秒に一回取得
+    let dt = 0.02
     
     override func viewDidLoad() {
         super.viewDidLoad()
